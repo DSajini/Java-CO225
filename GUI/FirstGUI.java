@@ -1,13 +1,20 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 
-public class FirstGUI {
+public class FirstGUI implements ActionListener {
 	
-	
+	JButton b1;
 	public void create(){
 		//create a JFrame and a Button
 		JFrame frame = new JFrame();
-		JButton b1 = new JButton("Click");
+		b1 = new JButton("Click");
+		
+		
+		
+		//add action listener to button
+		b1.addActionListener(this);
+		
 		
 		//add the button to content pane of window
 		frame.getContentPane().add(BorderLayout.SOUTH,b1);
@@ -25,5 +32,10 @@ public class FirstGUI {
 		FirstGUI mygui = new FirstGUI();
 		mygui.create();
 	}
+	
+	public void actionPerformed(ActionEvent event){
+		b1.setText("CLICKED");
+	}
+	
 	
 }
